@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <link rel="stylesheet" href="./materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body >
+    
+
+
+  <div id="preloader" aria-busy="true" aria-label="Loading, please wait." role="progressbar">
+    <img class="icon" src="./images/footbal/bolt.svg">
+</div>
+
+<div id="site">
+    <pre>Task1. Дан квадрат. Сделайте так, чтобы при двойном клике на него он красился в синий цвет.</pre>
+
+    <div id='quad'></div>
+
+
+
+    
+
+      <pre>Task 2. Даны картинки. Привяжите к каждой картинке событие, чтобы по клику на картинку алертом выводился ее src.</pre>
+
+    <div class="club-image">
+    <img src="./images/footbal/barcelona.png">
+    <img src="./images/footbal/bayern.png">
+    <img src="./images/footbal/juventus.png">
+</div>
+
+
+    <pre>Task3. Привяжите всем ссылкам событие - по наведению на ссылку в конец ее текста дописывается ее href в круглых скобках.</pre>
+    <div id="links">
+      <div><a class="link" href="https://www.google.com/">Google</a><span class="href-disabled">https://www.google.com/></span></div>
+      <div><a class="link" href="https://yandex.by/">Yandex</a><span class="href-disabled">https://yandex.by/</span></div>
+      <div><a class="link" href="https://mail.ru/">Mail</a><span class="href-disabled">https://mail.ru/</span></div>
+    </div>
+   
+
+
+
+    <pre>Task4. Напишите функцию, которая при клике на клавишу "Esc" удалит данную карточку.</pre>
+
+    <div class="row">
+        <div class="col s6 m4">
+          <div class="card">
+            <div class="card-image">
+              <img src="images/footbal/manchester.png">
+              <span class="card-title">Card Title</span>
+            </div>
+            <div class="card-content">
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <pre>Task 5. Дан селект. По изменению селекта выведите текст выбранный в select справа от него.
+  </pre>
+
+  <div class="container-fluid">
+      <div class="row">
+
+          <div class="input-field col s3">
+              <select class="browser-default" id="selecters">
+                  <option value="Web application">Web application</option>
+                  <option value="Mobile application">Mobile application</option>
+                  <option value="Website">Website</option>
+                  <option value="Design">Design</option>
+              </select>
+          </div>
+          <div class="club-image col s3">
+              <p id="current-result">Web application</p>
+          </div>
+      </div>
+  </div>
+
+
+    <pre>Task6.  Дана таблица с покупателями с тремя колонками: имя, продукт и цена. Под таблицей есть форма, с помощью которой можно будет добавить нового покупателями в таблицу. Сделайте так, чтобы при клике на любую ячейку появлялся prompt, с помощью которого можно изменить текст ячейки. Задачу решите с помощью делегирования (то есть событие должно быть навешано на table).
+      Ниже расположена форма, с 3 полями ввода. При нажатии на "добавить нового", происходит добавление нового пользователя. Нужно отметить, что если поле ввода пустое, то не добавляем новую задачу, пока пользователь не заполнит его.
+    </pre>
+
+    <div class="row">
+        <div class="col s6 m4">
+          <table>
+            <thead>
+              <tr>
+                  <th>Name</th>
+                  <th>Product</th>
+                  <th>Price</th>
+              </tr>
+            </thead>
+    
+            <tbody>
+              <tr>
+                <td>Alvin</td>
+                <td>Eclair</td>
+                <td>$0.87</td>
+              </tr>
+              <tr>
+                <td>Alan</td>
+                <td>Jellybean</td>
+                <td>$3.76</td>
+              </tr>
+              <tr>
+                <td>Jonathan</td>
+                <td>Lollipop</td>
+                <td>$7.00</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <form id="add-form">
+            <input type="text" name="fName" placeholder="name">
+            <p hidden>Поле обязательно для заполнения. Имя должно начинаться с заглавной буквы</p>
+            <input type="text" name="product" placeholder="product">
+            <p hidden>Поле обязательно для заполнения.</p>
+            <input type="text" name="price" placeholder="price">
+            <p hidden>Поле обязательно для заполнения. Укажите цену в формате "$1.00"</p>
+            <button id ="button-add" type="button">Добавить нового</button>
+          </form>
+        </div>
+      </div>
+
+
+    <pre>Task 7. Есть input, который является поисковиком. Вам необходимо реализовать живой поиск, чтобы при вводе любого символа в input происходило изменение
+      цвета текста того товара который соответствует данному символу. Наприме при вводе двух букв "Мо" - мы должны выделить желтым цветом слово <span style="color: gold">"Моль Молли"</span> и <span style="color: gold">"Моль"</span>.
+  </pre>
+
+  <div class="container">
+      <div class="row">
+          <input type="search" placeholder="Введите имя игрушки" id="search-value">
+
+          <ul id="list">
+              <li>Мишка</li>
+              <li>Осьминожка</li>
+              <li>Акула</li>
+              <li>Авокадо</li>
+              <li>Моль Молли</li>
+              <li>Альпака</li>
+              <li>Пингвиненок</li>
+              <li>Моль</li>
+              <li>Пачакун</li>
+              <li>Ленивец</li>
+          </ul>
+      </div>
+  </div>
+ 
+</div>
+
+<!--<button data-toggle-id="subscribe-mail">
+  Показать форму подписки
+</button>
+
+<form id="subscribe-mail" hidden>
+  Ваша почта: <input type="email">
+</form>-->
+
+
+
+        <script src="./script.js"></script>
+</body>
+</html>
